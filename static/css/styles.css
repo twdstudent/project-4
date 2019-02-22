@@ -1,0 +1,49 @@
+/* base page */
+
+.nabar-align {
+   width: 80%;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+/* index page */
+
+.backgorund-image {
+    position: fixed;
+    width: 100%;
+    padding: 0px;
+    background-image: url("../images/food-1.jpg");
+    background-color: #cccccc;
+    height: 500px;    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+}
+
+.title {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 100px;
+}
+
+.main-title {
+    color: #928f8f;
+    text-align: center;
+    margin-top: 200px;
+}
+
+
+/* contact page stuff */
+
+.form {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+.form-group {
+    margin-top: 20px;
+}

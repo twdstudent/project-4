@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <title>Recipe Project</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_w37ga4SHlpCzuYlmKTHoV");
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="nabar-align">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- a class="navbar-brand" href="{{ url_for('index') }}">Thomas's <br> Recipes</a -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <!-- a class="nav-item nav-link active" href="{{ url_for('index') }}"><span class="sr-only">(current)</span></a -->
+                    <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
+                    <a class="nav-item nav-link" href="{{ url_for('find') }}">Find a recipe</a>
+                    <a class="nav-item nav-link" href="{{ url_for('share') }}">Share a recipe</a>
+                    <a class="nav-item nav-link" href="{{ url_for('contact') }}">Contact us</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    {% block content %}
+    <!--What we're doing here is defining a block, or an area, that we can inject content into.-->
+    {% endblock %}
+
+    <!-- The difference between the percent sign and the double curly bracket notation
+    that we've used before is that the double curly brackets contain an expression, 
+    which is outputting something either to the screen, or, in this case, into our href. -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="static/js/recipe.js"></script>
+</body>
+
+</html>
