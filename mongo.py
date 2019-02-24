@@ -2,7 +2,7 @@ import pymongo
 import os
 
 MONGODB_URI = os.getenv("MONGO_URI")
-DBS_NAME = "mytestdb"
+DBS_NAME = "recipePage"
 COLLECTION_NAME = "recipePage"
 
 def mongo_connect(url):

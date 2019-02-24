@@ -1,5 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>find-recipe.html</h1>
+
+{% recipePage in recipePage %}
+    {% recipePage.origin %}
+    {% recipePage.title %}
+    {% recipePage.category %}
+    {% recipePage.dietary_requirements %}
+    {% recipePage.vegetarian_friendly %}
+    {% recipePage.vegan_friendly %}
+    {% recipePage.ingredients %}
+    {% recipePage.instructions %}
+{% endfor %}
+
 {% endblock %}
 

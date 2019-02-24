@@ -10,31 +10,26 @@ so import something from the BSON library as well
 '''
 
 app = Flask(__name__)
-#app.config["MONGO_DBNAME"] = 'recipe_page'
-#app.config["MONGO_URI"] = os.environ.get('SRV_CONNECTION_STRING')
+app.config["MONGO_DBNAME"] = 'recipePage'
+app.config["MONGO_URI"] = os.getenv('MONGO_URI')
 
-#mongo = PyMongo(app)
+mongo = PyMongo(app)
 
 @app.route('/') #'/' refers to the default route.
 def index():
     return render_template("index.html")
     
-@app.route('/find')
-def find():
-    return render_template('find-recipe.html')   
+@app.route('/find_recipe')
+def find_recipe():
+    return render_template('find-recipe.html', recipePage=mongo.db.recipePage.find())   
     
-@app.route('/share')
-def share():
+@app.route('/share_recipe')
+def share_recipe():
     return render_template('share-recipe.html')    
     
 @app.route('/contact')
 def contact():
     return render_template('contact.html')    
-
-#@app.route('/get_recipe')
-
-#def get_recipe():
-#    return render_template("find-recipe.html", tasks=mongo.db.recipe.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
