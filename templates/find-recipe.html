@@ -3,14 +3,14 @@
 <h1>find-recipe.html</h1>
 
 {% for recipePage in recipePage %}
-    {% recipePage.origin %}
-    {% recipePage.title %}
-    {% recipePage.category %}
-    {% recipePage.dietary_requirements %}
-    {% recipePage.vegetarian_friendly %}
-    {% recipePage.vegan_friendly %}
-    {% recipePage.ingredients %}
-    {% recipePage.instructions %}
+    {{ recipePage.origin }}
+    {{ recipePage.title }}
+    {{ recipePage.category }}
+    {{ recipePage.dietary_requirements }}
+    {{ recipePage.vegetarian_friendly }}
+    {{ recipePage.vegan_friendly }}
+    {{ recipePage.ingredients }}
+    {{ recipePage.instructions }}
 {% endfor %}
 
 {% endblock %}
