@@ -2,7 +2,7 @@
 {% block content %}
 <h1>find-recipe.html</h1>
 
-{% recipePage in recipePage %}
+{% for recipePage in recipePage %}
     {% recipePage.origin %}
     {% recipePage.title %}
     {% recipePage.category %}
