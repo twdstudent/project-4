@@ -23,7 +23,13 @@ def share_recipe():
     
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')    
+    return render_template('contact.html')
+    
+@app.route('/insert_recipe', methods=['POST'])
+def insert_recipe():
+    recipe = mongo.db.recipePage
+    recipe.insert_one(request.form.to_dict())
+    return redirect(url_for('share_recipe'))    
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

@@ -3,14 +3,34 @@
 <h1 align="center">Find a recipe!</h1>
 
 {% for recipePage in recipePage %}
-    {{ recipePage.origin }}
+<div class="conatiner">    
+  <div class="row">
+    <div class="col-md-4">
     {{ recipePage.title }}
+    </div>
+    <div class="col-md-4">
+    {{ recipePage.origin }}
+    </div>
+    <div class="col-md-4">
     {{ recipePage.category }}
+    </div>
+    <div class="col-md-4">
     {{ recipePage.dietary_requirements }}
+    </div>
+    <div class="col-md-4">
     {{ recipePage.vegetarian_friendly }}
+    </div>
+    <div class="col-md-4">
     {{ recipePage.vegan_friendly }}
+    </div>
+    <div class="col-md-4">
     {{ recipePage.ingredients }}
+    </div>
+    <div class="col-md-4">
     {{ recipePage.instructions }}
+    </div>
+  </div>
+</div>
 {% endfor %}
 
 <div class="container">
@@ -301,7 +321,7 @@
         <option>main</option>
         <option>side order</option>
         <option>snack</option>
-        <option>desert</option>
+        <option>dessert</option>
       </select>
     </div>
     
