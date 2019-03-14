@@ -15,8 +15,12 @@ def index():
     
 @app.route('/find_recipe')
 def find_recipe():
-    return render_template('find-recipe.html', recipePage=mongo.db.recipePage.find())   
-    
+    return render_template('find-recipe.html', recipePage=mongo.db.recipePage.find())
+'''    
+@app.route("/your_results", methods=["GET"])    
+def your_results():
+    return render_template('share-recipe.html', recipePage=mongo.db.recipePage.find())
+'''    
 @app.route('/share_recipe')
 def share_recipe():
     return render_template('share-recipe.html')    

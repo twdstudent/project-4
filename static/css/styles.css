@@ -21,6 +21,16 @@
     position: fixed;
 }
 
+h1, h2, h3, h4, h5 {
+    text-decoration: underline;
+}
+
+.border {
+    border: solid 1px black;
+    width: 40%;
+    margin-left: 20px;
+}
+
 .title {
     margin-left: auto;
     margin-right: auto;
@@ -41,7 +51,7 @@
     margin-right: auto;
 }
 
-/* contact page stuff */
+/*-- contact page stuff --*/
 
 .form {
     width: 70%;
@@ -52,4 +62,16 @@
 
 .form-group {
     margin-top: 20px;
+}
+
+/*-- other bits --*/
+
+.buttons {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.span {
+    font-weight: bolder;
+    text-decoration: underline;
 }

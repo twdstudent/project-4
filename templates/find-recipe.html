@@ -1,44 +1,13 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <h1 align="center">Find a recipe!</h1>
 
-{% for recipePage in recipePage %}
-<div class="conatiner">    
-  <div class="row">
-    <div class="col-md-4">
-    {{ recipePage.title }}
-    </div>
-    <div class="col-md-4">
-    {{ recipePage.origin }}
-    </div>
-    <div class="col-md-4">
-    {{ recipePage.category }}
-    </div>
-    <div class="col-md-4">
-    {{ recipePage.dietary_requirements }}
-    </div>
-    <div class="col-md-4">
-    {{ recipePage.vegetarian_friendly }}
-    </div>
-    <div class="col-md-4">
-    {{ recipePage.vegan_friendly }}
-    </div>
-    <div class="col-md-4">
-    {{ recipePage.ingredients }}
-    </div>
-    <div class="col-md-4">
-    {{ recipePage.instructions }}
-    </div>
-  </div>
-</div>
-{% endfor %}
-
+<!-- input/filtering fields -->
 <div class="container">
   <div class="row">
-    
+
     <div class="form-group col-md-6 col-sm-12">
-          <label for="exampleFormControlSelect1">Select country of origin</label>
-          <select class="form-control" id="exampleFormControlSelect1">
+      <label for="exampleFormControlSelect1">Select country of origin</label>
+      <select class="form-control" id="exampleFormControlSelect1">
                 <option value="all">all</option>
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
@@ -286,7 +255,7 @@
                 <option value="Zimbabwe">Zimbabwe</option>
       </select>
     </div>
-    
+
     <div class="form-group col-md-6 col-sm-12">
       <label for="exampleFormControlSelect1">Do you want your dish free from...</label>
       <select class="form-control" id="exampleFormControlSelect1">
@@ -297,15 +266,15 @@
         <option>eggs</option>
       </select>
     </div>
-    
+
     <div class="form-group col-md-6 col-sm-12">
-        <label for="exampleFormControlSelect1">wanting vegetarian freindly?</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+      <label for="exampleFormControlSelect1">wanting vegetarian freindly?</label>
+      <select class="form-control" id="exampleFormControlSelect1">
           <option>yes</option>
           <option>no</option>
         </select>
     </div>
-    
+
     <div class="form-group col-md-6 col-sm-12">
       <label for="exampleFormControlSelect1">wanting vegan freindly?</label>
       <select class="form-control" id="exampleFormControlSelect1">
@@ -313,7 +282,7 @@
         <option>no</option>
       </select>
     </div>
-    
+
     <div class="form-group col-md-6 col-sm-12">
       <label for="exampleFormControlSelect1">What type of dish is it?</label>
       <select class="form-control" id="exampleFormControlSelect1">
@@ -324,16 +293,38 @@
         <option>dessert</option>
       </select>
     </div>
-    
+
+  </div>
+  <div class="buttons">
+    <input class="btn btn-primary submit-button" type="submit" value="see-results">
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    
+
+<hr width="95%">
+
+<h4 align="center">Your results!</h4>
+
+
+{% for recipePage in recipePage %}
+<div class="conatiner">
+  <div class="row" id="recipeArea">
+    <div class="col-md-6 border" >
+      <h3 align="center">{{ recipePage.title }}</h3>
+      <p><span style="font-weight: bolder" class="span">Country-{{ recipePage.origin }}</span>
+        <p>
+          <p><span style="font-weight: bolder" class="span">Category-{{ recipePage.category }}</span>
+            <p>
+              <p><span style="font-weight: bolder" class="span">dietary_requirements-</span>{{ recipePage.dietary_requirements }}</p>
+              <p><span style="font-weight: bolder" class="span">vegetarian_friendly-</span>{{ recipePage.vegetarian_friendly }}</p>
+              <p><span style="font-weight: bolder" class="span">vegan_friendly-</span>{{ recipePage.vegan_friendly }}</p>
+              <p><span style="font-weight: bolder" class="span">ingredients-</span>{{ recipePage.ingredients }}</p>
+              <p><span style="font-weight: bolder" class="span">instructions-</span>{{ recipePage.instructions }}</p>
+              <button type="button" class="btn btn-outline-success" onclick="printRecipe()"><i class="fas fa-print"></i></button>
+    </div>
   </div>
 </div>
 
 
-{% endblock %}
 
+{% endfor %} {% endblock %}
