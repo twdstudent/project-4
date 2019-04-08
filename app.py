@@ -2,6 +2,8 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
+from bson.json_util import dumps
+import json
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'recipePage'
@@ -16,18 +18,42 @@ def index():
 @app.route('/find_recipe')
 def find_recipe():
     return render_template('find-recipe.html', recipePage=mongo.db.recipePage.find())
-'''    
-@app.route("/your_results", methods=["GET"])    
+    
+@app.route("/your_results", methods=["POST"])    
 def your_results():
-    return render_template('share-recipe.html', recipePage=mongo.db.recipePage.find())
-'''    
+    print(request.form.to_dict())
+    print('category is: {}'.format(request.form['category']))
+    
+    form_object = {
+        'origin': request.form['origin'].lower(),
+        'dietary_requirements': request.form['dietary_requirements'].lower(),
+        'vegetarian_friendly': request.form['vegetarian_friendly'].lower(),
+        'vegan_friendly': request.form['vegan_friendly'].lower(),
+        'category': request.form['category'].lower()
+    }
+    
+    recipes = mongo.db.recipePage.find(form_object)
+    dumpedrecipes = dumps(recipes)
+    recipes = json.loads(dumpedrecipes)
+    
+    for recipe in recipes:
+        recipe['ingredients'] = recipe['ingredients'].split(', ')
+        
+    # for k, v in recipes[0].items():
+    #     print('{} --> {}'.format(k, v))
+        
+    
+    print(dumpedrecipes)
+    
+    for recipe in recipes:
+        print('found a recipe!!! {} ------> {}'.format(recipe['title'], recipe['category']))
+    
+    return render_template('your-results.html', recipes=recipes)
+    
+  
 @app.route('/share_recipe')
 def share_recipe():
     return render_template('share-recipe.html')    
-    
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
     
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -55,3 +81,8 @@ MongoDB stores its data in a JSON like format called BSON.
 so import something from the BSON library 
 '''
 
+'''    
+@app.route("/your_results", methods=["GET"])    
+def your_results():
+    return render_template('share-recipe.html', recipePage=mongo.db.recipePage.find())
+'''  

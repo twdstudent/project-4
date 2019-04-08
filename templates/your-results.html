@@ -1,4 +1,16 @@
 {% extends 'base.html' %}
-{% block content %}
 
+
+{% block content %}
+    
+   <!-- {{ recipes }} -->
+   {{ recipes }}
+    {% for recipe in recipes %}
+        <p>{{recipe.title}}</p>
+        <p>{{recipe.category}}</p>
+        <p>{{ recipe.ingredients.3 }}</p>
+        {% for ingredient in recipe.ingredients %}
+            <p style="font-weight: bold">{{ ingredient }}</p>
+        {% endfor %}
+    {% endfor %}
 {% endblock %}

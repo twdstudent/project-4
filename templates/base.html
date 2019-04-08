@@ -16,7 +16,6 @@
 <body>
     <div class="nabar-align">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <!-- a class="navbar-brand" href="{{ url_for('index') }}">Thomas's <br> Recipes</a -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -26,16 +25,23 @@
                     <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
                     <a class="nav-item nav-link" href="{{ url_for('find_recipe') }}">Find a recipe</a>
                     <a class="nav-item nav-link" href="{{ url_for('share_recipe') }}">Share a recipe</a>
-                    <a class="nav-item nav-link" href="{{ url_for('contact') }}">Contact us</a>
                 </div>
             </div>
         </nav>
     </div>
-    
+
     {% block content %}
     <!--What we're doing here is defining a block, or an area, that we can inject content into.-->
     {% endblock %}
 
+    <footer>
+        <div class="footer-divs">
+
+        </div>
+        <div class="footer-divs">
+            <i class="fab fa-facebook-square"></i>
+        </di>
+    </footer>
     <!-- The difference between the percent sign and the double curly bracket notation
     that we've used before is that the double curly brackets contain an expression, 
     which is outputting something either to the screen, or, in this case, into our href. -->
