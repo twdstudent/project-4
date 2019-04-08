@@ -299,7 +299,7 @@
 
     </div>
   </div>
-  
+
   <div class="button-center">
     <input class="btn btn-primary " type="submit" value="see-results">
   </div>
@@ -324,6 +324,12 @@
           <p><span style="font-weight: bolder" class="span">ingredients-</span>{{ recipePage.ingredients }}</p>
           <p><span style="font-weight: bolder" class="span">instructions-</span>{{ recipePage.instructions }}</p>
           <button type="button" class="btn btn-outline-success" onclick="printRecipe()"><i class="fas fa-print"></i></button>
+          <div class="button-edit-delete">
+            <button type="button" class="btn btn-success"><a href="{{ url_for ('edit_recipe', id=recipe._id) }}">Edit</a></button>
+          </div>
+          <div class="button-edit-delete">
+            <button type="button" class="btn btn-danger">Delete</button>
+          </div>
 </div>
 
 {% endfor %} {% endblock %}

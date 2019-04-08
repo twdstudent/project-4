@@ -4,6 +4,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
 from bson.json_util import dumps
 import json
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'recipePage'
@@ -60,6 +61,13 @@ def insert_recipe():
     recipe = mongo.db.recipePage
     recipe.insert_one(request.form.to_dict())
     return redirect(url_for('share_recipe'))    
+    
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    the_recipe =  mongo.db.recipePage.find_one({"_id": ObjectId(recipe_id)})
+    all_categories =  mongo.db.categories.find()
+    return render_template('edit-recipe.html', recipe=the_recipe,
+                           categories=all_categories)    
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
