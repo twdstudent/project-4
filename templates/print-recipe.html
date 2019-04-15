@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1 align="center">PRINT!</h1>
+<div class="recipe-display-print" id="recipeArea">
+    <h3 align="center">{{ recipe.title }}</h3>
+    <p><span style="font-weight: bolder" class="span">Country-{{ recipe.origin }}</span>
+        <p>
+            <p><span style="font-weight: bolder" class="span">Category-{{ recipe.category }}</span>
+                <p>
+                    <p><span style="font-weight: bolder" class="span">dietary_requirements-</span>{{ recipe.dietary_requirements }}</p>
+                    <p><span style="font-weight: bolder" class="span">vegetarian_friendly-</span>{{ recipe.vegetarian_friendly }}</p>
+                    <p><span style="font-weight: bolder" class="span">vegan_friendly-</span>{{ recipe.vegan_friendly }}</p>
+                    <p><span style="font-weight: bolder" class="span">ingredients-</span>{{ recipe.ingredients }}</p>
+                    <p><span style="font-weight: bolder" class="span">instructions-</span>{{ recipe.instructions }}</p>
+                    <div>
+                        <button type="button" class="btn btn-outline-success" onclick="printRecipe()"><i class="fas fa-print"></i></button>
+                    </div>
+</div>
+
+
+<script>
+    function printRecipe() {
+        var print_div = document.getElementById("recipeArea");
+        var print_area = window.open();
+        print_area.document.write(print_div.innerHTML);
+        print_area.document.close();
+        print_area.focus();
+        print_area.print();
+        print_area.close();
+    }
+</script>
+
+{% endblock %}

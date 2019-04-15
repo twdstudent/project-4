@@ -82,6 +82,20 @@ h5 {
     background-color: #b7d8fb;
 }
 
+.recipe-display-print {
+    border: solid 1px black;
+    border-radius: 10px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: #b7d8fb;
+}
+
+.form-control {
+    background-color: #dce3f5;
+}
+
 .dropdown-menu {
     height: 300px;
     overflow: auto;
@@ -92,6 +106,10 @@ h5 {
     background-color: #007bff;
     border-color: #007bff;
     width: 150px;
+}
+
+.btn-danger {
+    width: 100%;
 }
 
 .button-center {
@@ -105,10 +123,21 @@ h5 {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #28a745;
-    border-color: #28a745;
     width: 80px;
+}
+
+.btn-outline-success {
+    width: 100%;
+}
+
+.print-button-container {
+    width: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    margin-left: 65px;
 }
 
 /*-- footer --*/

@@ -7,11 +7,12 @@
             <div class="col-md-6 col-sm-12">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Dish Name</label>
-                    <input name="title" type="textarea" class="form-control" id="title" placeholder="Dish Name">
+                    <input name="title" type="textarea" class="form-control" id="title" placeholder="{{ recipe.title }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Select country of origin</label>
                     <select class="form-control" id="origin" name="origin">
+                        <option value="{{ recipe.origin }}">{{ recipe.origin }}</option>
                         <option value="unknown">all</option>
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Åland Islands">Åland Islands</option>
@@ -256,13 +257,14 @@
                         <option value="Western Sahara">Western Sahara</option>
                         <option value="Yemen">Yemen</option>
                         <option value="Zambia">Zambia</option>
-                        <option value="Zimbabwe">Zimbabwe</option>
+                        <option value="Zimbabwe">Zimbabwe</option>    
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Is your dish free from...</label>
                     <select class="form-control" id="dietary_requirements" name="dietary_requirements">
+                        <option value="{{ recipe.dietary_requirements }}">{{ recipe.dietary_requirements }}</option>
                         <option>none</option>
                         <option>nuts</option>
                         <option>Gluten</option>
@@ -274,6 +276,7 @@
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Is your dish vegetarian freindly?</label>
                     <select class="form-control" id="vegetarian_friendly" name="vegetarian_friendly">
+                        <option value="{{ recipe.vegetarian_friendly }}">{{ recipe.vegetarian_friendly }}</option>
                         <option>yes</option>
                         <option>no</option>
                     </select>
@@ -282,20 +285,22 @@
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Is your dish vegan freindly?</label>
                     <select class="form-control" id="vegan_friendly" name="vegan_friendly">
-                    <option>yes</option>
-                    <option>no</option>
-                </select>
+                        <option value="{{ recipe.vegan_friendly }}">{{ recipe.vegan_friendly }}</option>
+                        <option>yes</option>
+                        <option>no</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">What type of dish is it?</label>
                     <select class="form-control" id="category" name="category">
-                    <option>starter</option>
-                    <option>main</option>
-                    <option>side order</option>
-                    <option>snack</option>
-                    <option>dessert</option>
-                    <option>breakfast</option>
+                        <option value="{{ recipe.category }}">{{ recipe.category }}</option>
+                        <option>starter</option>
+                        <option>main</option>
+                        <option>side order</option>
+                        <option>snack</option>
+                        <option>dessert</option>
+                        <option>breakfast</option>
                     </select>
                 </div>
             </div>
@@ -303,19 +308,23 @@
             <div class="col-md-6 col-sm-12">
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">list the ingredients (and their quantities)</label>
-                    <textarea name="ingredients" class="form-control" id="ingredients" rows="8"></textarea>
+                    <textarea name="ingredients" class="form-control" id="ingredients" rows="8">
+                        {{ recipe.ingredients }}
+                    </textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Tell us how to bring it all together!</label>
-                    <textarea name="instructions" class="form-control" id="instructions" rows="8"></textarea>
+                    <textarea name="instructions" class="form-control" id="instructions" rows="8">
+                        {{ recipe.instructions }}
+                    </textarea>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="button-center">
-        <input class="btn btn-primary submit-button" type="submit" value="Submit">
+        <input class="btn btn-success submit-button" type="submit" value="Edit">
     </div>
 
 </form>
