@@ -15,12 +15,14 @@
           <p><span style="font-weight: bolder" class="span">vegan_friendly-</span>{{ recipePage.vegan_friendly }}</p>
           <p><span style="font-weight: bolder" class="span">ingredients-</span>{{ recipePage.ingredients }}</p>
           <p><span style="font-weight: bolder" class="span">instructions-</span>{{ recipePage.instructions }}</p>
-              <button type="button" class="btn btn-outline-success"><a href="{{ url_for ('print_recipe', recipePage_id=recipePage._id) }}"><i class="fas fa-print"></i></a></button>
-          <div class="button-edit-delete">
+          <div class="button-container">
+            <button type="button" class="btn btn-outline-success"><a href="{{ url_for ('print_recipe', recipePage_id=recipePage._id) }}"><i class="fas fa-print"></i></a></button>
+          </div>
+          <div class="button-container">
             <button type="button" class="btn btn-success"><a href="{{ url_for ('edit_recipe', recipePage_id=recipePage._id) }}">Edit</a></button>
           </div>
-          <div class="button-edit-delete">
-            <button type="button" class="btn btn-danger">Delete</button>
+          <div class="button-container">
+            <button type="button" class="btn btn-danger"><a href="{{ url_for ('delete_recipe', recipePage_id=recipePage._id) }}"></a>Delete</button>
           </div>
 </div>
 

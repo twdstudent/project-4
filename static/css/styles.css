@@ -101,39 +101,22 @@ h5 {
     overflow: auto;
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
-    width: 150px;
-}
-
-.btn-danger {
-    width: 100%;
-}
-
-.button-center {
-    width: 150px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.button-edit-delete {
+.button-container {
+    width: 80px;
+    margin-bottom: 10px;
     display: inline-block;
-}
-
-.btn-outline-success {
-    width: 100%;
+    margin-left: 25px;
 }
 
 .print-button-container {
     width: 80px;
+    margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.btn {
-    margin-left: 65px;
+.btn-danger, .btn-success, .btn-outline-success {
+    width: 100%;
 }
 
 /*-- footer --*/

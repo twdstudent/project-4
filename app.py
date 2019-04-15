@@ -35,7 +35,28 @@ def edit_recipe(recipePage_id):
     the_recipe =  mongo.db.recipePage.find_one({"_id": ObjectId(recipePage_id)})
     all_categories =  mongo.db.categories.find()
     return render_template('edit-recipe.html', recipe=the_recipe,
-                           categories=all_categories)    
+                           categories=all_categories)
+                           
+@app.route('/update_recipe/<recipePage_id>')
+def update_recipe(recipePage_id):
+    recipePage = mongo.db.recipePage
+    recipePage.update( {'_id': ObjectId(recipePage_id)},
+    {
+        'title':request.form.get('title'),
+        'origin':request.form.get('origin'),
+        'dietary_requirements': request.form.get('dietary_requirements'),
+        'vegetarian_friendly': request.form.get('vegetarian_friendly'),
+        'vegan_friendly':request.form.get('vegan_friendly'),
+        'category':request.form.get('category'),
+        'ingredients':request.form.get('ingredients'),
+        'instructions':request.form.get('instructions'),
+    })
+    return redirect(url_for('find_recipe'))
+    
+@app.route('/delete_recipe/<recipePage_id>')
+def delete_recipe(recipePage_id):
+    mongo.db.recipePage.remove({'_id': ObjectId(recipePage_id)})
+    return redirect(url_for('find_recipe'))    
 
 @app.route('/print_recipe/<recipePage_id>')
 def print_recipe(recipePage_id):
@@ -49,23 +70,3 @@ if __name__ == '__main__':
             port=int(os.environ.get('PORT')),
             debug=True) 
 
-
-#'/' refers to the default route.
-
-'''
-MongoDB stores its data in a JSON like format called BSON.
-so import something from the BSON library as well
-'''
-
-'''
-setting it to true allows the changes to be picked up automatically in the browser.
-
-MongoDB stores its data in a JSON like format called BSON.
-so import something from the BSON library 
-'''
-
-'''    
-@app.route("/your_results", methods=["GET"])    
-def your_results():
-    return render_template('share-recipe.html', recipePage=mongo.db.recipePage.find())
-'''  
