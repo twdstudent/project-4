@@ -63,8 +63,8 @@ def insert_recipe():
     return redirect(url_for('share_recipe'))    
     
 @app.route('/edit_recipe/<recipe_id>')
-def edit_recipe(recipe_id):
-    the_recipe =  mongo.db.recipePage.find_one({"_id": ObjectId(recipe_id)})
+def edit_recipe(recipePage_id):
+    the_recipe =  mongo.db.recipePage.find_one({"_id": ObjectId(recipePage_id)})
     all_categories =  mongo.db.categories.find()
     return render_template('edit-recipe.html', recipe=the_recipe,
                            categories=all_categories)    
