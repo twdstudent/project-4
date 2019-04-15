@@ -72,7 +72,7 @@ h5 {
 .recipe-display {
     display: inline-block;
     border: solid 1px black;
-    border-radius: 10px;
+    border-radius: 3px;
     width: 40%;
     margin-left: 85px;
     margin-bottom: 20px;
@@ -120,10 +120,6 @@ h5 {
 
 .button-edit-delete {
     display: inline-block;
-}
-
-.btn-success {
-    width: 80px;
 }
 
 .btn-outline-success {
