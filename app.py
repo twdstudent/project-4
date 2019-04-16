@@ -39,8 +39,8 @@ def edit_recipe(recipePage_id):
                            
 @app.route('/update_recipe/<recipePage_id>')
 def update_recipe(recipePage_id):
-    recipePage = mongo.db.recipePage
-    recipePage.update( {'_id': ObjectId(recipePage_id)},
+    recipe = mongo.db.recipePage
+    recipe.update( {'_id': ObjectId(recipePage_id)},
     {
         'title':request.form.get('title'),
         'origin':request.form.get('origin'),
@@ -54,8 +54,8 @@ def update_recipe(recipePage_id):
     return redirect(url_for('find_recipe'))
     
 @app.route('/delete_recipe/<recipePage_id>')
-def delete_recipe(recipePage_id):
-    mongo.db.recipePage.remove({'_id': ObjectId(recipePage_id)})
+def delete_recipe(recipe_id):
+    mongo.db.recipePage.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('find_recipe'))    
 
 @app.route('/print_recipe/<recipePage_id>')
