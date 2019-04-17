@@ -2,9 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
-from bson.json_util import dumps
 import json
-from bson.objectid import ObjectId
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'recipePage'
@@ -37,7 +35,7 @@ def edit_recipe(recipePage_id):
     return render_template('edit-recipe.html', recipe=the_recipe,
                            categories=all_categories)
                            
-@app.route('/update_recipe/<recipePage_id>')
+@app.route('/update_recipe/<recipePage_id>', methods=['POST'])
 def update_recipe(recipePage_id):
     recipe = mongo.db.recipePage
     recipe.update( {'_id': ObjectId(recipePage_id)},

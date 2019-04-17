@@ -3,6 +3,7 @@
 
 - <a href="https://github.com/twdstudent/project-4">Link to GitHub Repository.</a>
 - <a href="https://dashboard.heroku.com/apps/project-4-recipe-site">Link to Heroku Repository.</a>
+- <a href="https://project-4-recipe-site.herokuapp.com/">Live site on Heroku</a>
 
 A simple cook book website where people can view update and add recipes for others to see.
 Taken this site down to its bare CRUD coponents.
@@ -64,6 +65,6 @@ Would like to thank my mentor Chris Zielinski for his help and guidence with thi
 #### Content
 recipes on this site were gathered from *https://www.bbcgoodfood.com/recipes*
 #### Media
-The photos used in this site are of my own *Thomas Dodson*
+The photo used in this site are of my own *Thomas Dodson*
 #### Acknowledgements
 I received inspiration for this project from my love of food! 
