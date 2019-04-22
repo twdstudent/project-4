@@ -34,7 +34,7 @@ and with use of media queries made said divs responsive so that large recipes di
 cluttered.
 
 ### Future plans!
-Despaite what my parents say, I do have plans, but back this project!
+Despite what my parents say, I do have plans, but back this project!
 I would like to add (mentioned earlier) a search filter where a user can use the same form they used to input a recipe to seatch for a spceific
 recipe that matches there desired criteria ie vegan freindly, gluten free etc.
 A log in feature is something I'd want to add, this would help with only allowing users to edit/delete reipes they have entered.
@@ -48,7 +48,7 @@ MongoDB was used for storing and retrieving recipes.
 
 ### Testing 
 testing of this site has primarly been done using chrome tools to test responsiveness also by adding and editing recipes through the site it self
-see if CRUD functionality is working and connected to MongoDB
+see if CRUD functionality is working and connected to MongoDB, this was done through C9 and the lainched app through Heroku.
 
 ### Deployment
 This site is backed up to both GitHub and Heroku (links at the top of this file).
