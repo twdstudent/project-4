@@ -7,7 +7,7 @@
     margin-bottom: 0px;
 }
 
-body {
+.body {
     background-color: #cafbc4;
 }
 
@@ -26,12 +26,10 @@ body {
     margin: 0px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-    text-decoration: underline;
+.main-title-two {
+    color: #767a7f;
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
 }
 
 .title {
@@ -46,6 +44,10 @@ h5 {
     text-align: center;
     margin-top: 300px;
     font-family: 'Dosis', sans-serif;
+}
+
+.bg-light {
+    background-color: #cafbc4;
 }
 
 /*-- contact page stuff --*/

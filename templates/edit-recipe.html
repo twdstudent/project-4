@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<h1 align="center">Edit Recipe</h1>
+<h1 class="main-title-two" align="center">Edit Recipe</h1>
 
 <form action="{{ url_for('update_recipe', recipePage_id=recipe._id) }}" method="POST">
     <div class="container">

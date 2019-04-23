@@ -11,10 +11,9 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 
     <title>Recipe Project</title>
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
 </head>
 
-<body>
+<body class="body">
     <div class="nabar-align">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +21,6 @@
   </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <!-- a class="nav-item nav-link active" href="{{ url_for('index') }}"><span class="sr-only">(current)</span></a -->
                     <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
                     <a class="nav-item nav-link" href="{{ url_for('find_recipe') }}">Find a recipe</a>
                     <a class="nav-item nav-link" href="{{ url_for('share_recipe') }}">Share a recipe</a>
@@ -34,18 +32,6 @@
     {% block content %}
     <!--What we're doing here is defining a block, or an area, that we can inject content into.-->
     {% endblock %}
-
-    <footer>
-        <div class="footer-divs">
-
-        </div>
-        <div class="footer-divs">
-            <i class="fab fa-facebook-square"></i>
-        </di>
-    </footer>
-    <!-- The difference between the percent sign and the double curly bracket notation
-    that we've used before is that the double curly brackets contain an expression, 
-    which is outputting something either to the screen, or, in this case, into our href. -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
