@@ -13,7 +13,7 @@ Wire frames located in the wireframes directory of this project.
 Site was kept simple as possible, the navbar is responsive to allow for better navigation on smaller devices such as mobiles etc.
 CSS styling is kept to a minimum, bootstrap was used for styling of buttons and forms.
 
-I ran into some heavy problems in this project which forced me to abondoned a part of it, originally I planned to to have a form where a user
+I ran into some heavy problems in this project which forced me to abandoned a part of it, originally I planned to to have a form where a user
 could filter there options and view the results that are filtered out that match the selection (is vegetarian friendly etc).
 But after weeks of head scratching and crying I decided to leave this out as it was taking up too much time with no results and time was running
 out.
